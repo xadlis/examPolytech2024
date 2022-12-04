@@ -1,0 +1,6 @@
+<div class="skill-table">
+  <div *ngFor="let skill of skills" class="skill-table-row">
+      <div class="capitalize">{{skill}}</div>
+      <app-skill-bar [value]="superhero[skill]"></app-skill-bar>
+  </div>
+</div>

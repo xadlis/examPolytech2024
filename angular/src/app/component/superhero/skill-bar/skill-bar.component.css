@@ -1,0 +1,26 @@
+.bar-container {
+    margin: 0 0.8em;
+    display: inline-block;
+    vertical-align: middle;
+    height: 30px;
+    min-width: 60vw;
+    border: 0.01em solid rgba(0, 0, 0, 0.3);
+}
+
+.bar-container > .bar {
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    background-color: #19A3FF;
+}
+
+.bar-container > .bar.bar-full {
+    background-color: #FF2320;
+}
+
+@media only screen and (min-width: 1064px) {
+    .bar-container {
+        min-width: 30vw;
+    }
+}

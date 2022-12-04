@@ -1,0 +1,21 @@
+<form (ngSubmit)="handleForm()" [formGroup]="heroForm">
+  <header>
+    <h3  *ngIf="superhero; else creationTitle">
+      Update {{ superhero.heroName }}
+    </h3>
+    <ng-template #creationTitle>
+      <h3>Add a new hero</h3>
+    </ng-template>
+  </header>
+  <main>
+    <div class="hero-input" *ngFor="let formField of heroFormFields">
+      <label [for]="formField.name">{{ formField.label }}</label>
+      <input type="text" [id]="formField.name" [formControlName]="formField.name" *ngIf="formField.type === 'text'">
+      <input type="number" [id]="formField.name" [formControlName]="formField.name" *ngIf="formField.type === 'number'">
+    </div>
+  </main>
+  <footer>
+    <button type="submit">Save</button>
+    <button type="button" (click)="cancel()">Cancel</button>
+  </footer>
+</form>

@@ -1,0 +1,86 @@
+form {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+form > header {
+    background-color: #19A3FF;
+    color: #fff;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+form > main {
+    width: 100%;
+}
+
+form > main > .hero-input {
+    margin: 1em;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+form > main > .hero-input > label {
+    margin: 0 0.8em;
+}
+
+form > main > .hero-input > input {
+    padding: .4em;
+    min-height: 1.8em;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+form > footer {
+    padding: 1.4em;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+
+/* Start Replaced by md-theme */
+form > footer > button {
+    margin: 0 .8em;
+    font-size: 1.2em;
+    padding: .4em;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+}
+
+ form > footer > button[type=submit] {
+    background-color: #19A3FF;
+    -webkit-box-shadow: 1px 2px 1px #137DC4;
+    box-shadow: 1px 2px 1px #137DC4;
+}
+
+form > footer > button[type=button] {
+    background-color: #FFA83A;
+    -webkit-box-shadow: 1px 2px 1px #C2802C;
+    box-shadow: 1px 2px 1px #C2802C;
+}
+
+/* End Replaced by md-theme */
+
+.mat-form-field {
+    width:  100%;
+}

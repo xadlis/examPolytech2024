@@ -1,0 +1,17 @@
+.skill-table .capitalize {
+    text-transform: capitalize;
+}
+
+.skill-table > .skill-table-row {
+    margin: 0.5em 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width: 667px) {
+    .skill-table > .skill-table-row  {
+        flex-direction: row;
+    }
+}

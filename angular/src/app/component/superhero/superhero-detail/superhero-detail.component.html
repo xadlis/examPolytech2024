@@ -1,0 +1,47 @@
+<div class="button-toolbar">
+    <button class="modal-close" (click)="cancel()">×</button>
+    <button class="update-hero" (click)="openUpdateModal()">
+        Update
+    </button>
+</div>
+
+<div *ngIf="superhero" [class]="'container full-description ' + superhero.alignment">
+  <header>
+      <div class="full-description-header-column">
+          Gender: {{superhero.gender}}<br />
+          Race: {{superhero.race}}<br />
+          Alignment: {{superhero.alignment}}
+      </div>
+
+      <div class="full-description-avatar avatar"
+          [style.background-image]="getAvatar(superhero.imageSrc)">
+      </div>
+
+      <div class="full-description-header-column">
+
+      Hair color: {{superhero.hairs}}<br/>
+      Eye color: {{superhero.eyes}}<br/>
+      Height: {{superhero.height}}<br/>
+      Weight: {{superhero.weight}}
+      </div>
+  </header>
+
+  <h2>{{superhero.heroName}}</h2>
+
+  <div class="full-description-details">
+      <div class="full-description-details-column">
+          <h3>Origin story</h3>
+          {{superhero.history}}
+      </div>
+
+      <div class="full-description-details-column">
+          <h3>True Identity</h3>
+          Fullname: {{superhero.fullName}}<br />
+          Place of birth: {{superhero.placeOfBirth}}<br />
+          Occupation: {{superhero.occupation}}
+
+          <h3>Skills</h3>
+          <app-skill-table [superhero]="superhero"></app-skill-table>
+      </div>
+  </div>
+</div>

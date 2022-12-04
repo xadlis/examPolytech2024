@@ -1,0 +1,53 @@
+<app-menubar (change)="handleSearch($event)" (create)="openCreateModal()"></app-menubar>
+<mat-grid-list cols="5" rowHeight="15em" gutterSize="15px">
+    <div *ngIf="teamA.length > 0 || teamB.length > 0">
+        <mat-grid-tile colspan="2">
+            <mat-card class="light-description">
+                <mat-card-header class="team">
+                        <h2><i class="material-icons">group</i>Team A : {{teamA.length}} members</h2>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-list>
+                        <mat-list-item *ngFor="let teamMember of teamA"> 
+                                <mat-icon mat-list-icon>person_outline</mat-icon>
+                                <p mat-line> {{teamMember.heroName}}</p>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+        <!-- Empty tile -->
+        <mat-grid-tile>
+            <div *ngIf="teamA.length > 0 && teamB.length > 0">
+                <button mat-raised-button color="primary" (click)="fight()">Fight !!</button>
+                <h4>{{fightResult}}</h4>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+            <mat-card class="light-description">
+                <mat-card-header class="team">
+                        <h2><i class="material-icons">group</i>Team B : {{teamB.length}} members</h2>
+                </mat-card-header>
+                <mat-card-content>
+                        <mat-list>
+                                <mat-list-item *ngFor="let teamMember of teamB"> 
+                                        <mat-icon mat-list-icon>person_outline</mat-icon>
+                                        <p mat-line> {{teamMember.heroName}}</p>
+                                </mat-list-item>
+                            </mat-list>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </div>
+    <mat-grid-tile *ngFor="let superhero of superheroes | filter : searchText">
+        <mat-card class="light-description">
+            <mat-card-header [class]="'teamMemberA' + (teamA.indexOf(superhero)>-1) + ' teamMemberB' + (teamB.indexOf(superhero)>-1)" 
+                (click)="changeTeam(superhero)" [style.background-image]="getBackground(superhero.imageSrc)">
+                <h2>{{superhero.heroName | uppercase}}</h2>
+            </mat-card-header>
+            <mat-card-content (click)="selectSuperhero(superhero)">
+                <p>{{superhero.history.substring(0, 200) + '...'}}</p>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

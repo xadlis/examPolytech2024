@@ -1,0 +1,78 @@
+[plantuml]
+--
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+--
+
+[mermaid]
+--
+graph TD
+    Start --> Stop
+--
+
+[mermaid]
+--
+sequenceDiagram
+    loop Daily query
+        Alice->>Bob: Hello Bob, how are you?
+        alt is sick
+            Bob->>Alice: Not so good :(
+        else is well
+            Bob->>Alice: Feeling fresh like a daisy
+        end
+
+        opt Extra response
+            Bob->>Alice: Thanks for asking
+        end
+    end
+
+--
+
+[mermaid]
+--
+graph TD
+A[fa:fa-tasks Action Plan] -->|check permission| B{fa:fa-user-lock Role}
+B -->|EMPL| D{fa:fa-sitemap Service}
+D --> |same as action plan creator|E(fa:fa-eye READ)
+D --> |different than action plan creator|H(fa:fa-ban FORBIDDEN)
+B -->|CONSULT| E
+B -->|GORM| F(fa:fa-edit EDIT)
+B -->|RESP| G(fa:fa-plus CREATE)
+A2[fa:fa-exclamation-triangle Sinister] -->|check permission| B2{fa:fa-user-lock Role}
+A3["fa:fa-comment Claim #128699;"]
+--
+
+
+
+[dot]
+--
+digraph example1 {
+    b
+    node[color=red]
+    a -> b
+}
+--
+
+
+[vega]
+--
+digraph example1 {
+    b
+    node[color=red]
+    a -> b
+}
+--
+
+
+
+
+
+
+
+
+
+
+

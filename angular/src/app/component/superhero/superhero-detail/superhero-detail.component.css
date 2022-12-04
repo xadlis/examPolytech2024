@@ -1,0 +1,112 @@
+.button-toolbar {
+    width: 100%;
+    position: relative;
+}
+
+.button-toolbar button.modal-close {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    line-height: .3em;
+    margin: 0.3em;
+    background: none;
+    border: 0;
+    font-size: 1.8em;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.button-toolbar button.modal-close:focus {
+    outline: none;
+}
+
+.button-toolbar button.update-hero {
+    color: #fff;
+    border: 0;
+    display: inline-block;
+    background-color: #19A3FF;
+    -webkit-box-shadow: 1px 2px 1px #137DC4;
+    box-shadow: 1px 2px 1px #137DC4;
+    padding: 0.4em;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.full-description {
+    margin: 2em 0;
+}
+
+.full-description h2 {
+    margin: 2em 0 0 0;
+    text-align: center;
+}
+
+.full-description > header {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.full-description.good > header > .full-description-avatar {
+    background-color: #19A3FF;
+    border: 2em solid #19A3FF;
+}
+
+.full-description.good > header > .full-description-header-column {
+    background-color: #19A3FF;
+}
+
+.full-description.bad > header > .full-description-header-column {
+    background-color: #FF2320;
+}
+
+.full-description.bad > header > .full-description-avatar {
+    background-color: #FF2320;
+    border: 2em solid #FF2320;
+}
+
+.full-description > header > .full-description-header-column {
+    display: flex;
+    align-items: center;
+    padding: 2.3em;
+}
+
+.full-description > header > .full-description-avatar {
+    width: 14em;
+    height: 14em;
+    background-size: cover;
+    border-radius: 50%;
+    transform: scale(1.25);
+}
+
+.full-description > .full-description-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.full-description > .full-description-details > .full-description-details-column {
+    margin: 2em;
+    line-height: 1.5em;
+}
+
+@media only screen and (min-width: 1064px) {
+    .full-description > .full-description-details {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: 667px) {
+    .full-description > header {
+        flex-direction: row;
+    }
+
+    .full-description > header > .full-description-header-column {
+        min-height: 64px;
+        width: 120px;
+    }
+}
