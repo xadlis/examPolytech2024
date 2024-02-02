@@ -1,0 +1,63 @@
+services:
+  database:
+    image: mysql:8
+    container_name: mysql
+    volumes:
+      - database:/var/lib/mysql
+    networks:
+      - myNetwork
+    environment:
+      - MYSQL_DATABASE=superheroes
+      - MYSQL_USER=polytech
+      - MYSQL_PASSWORD=polytech
+      - MYSQL_ROOT_PASSWORD=polytech
+    healthcheck:
+      test: mysqladmin ping -h localhost
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  backend:
+    image: backend
+    build:
+      context: /examPolytech2024/java
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - 8448:8448
+    environment:
+      - spring.datasource.url=jdbc:mysql://mysql:3306/superheroes
+      - spring.datasource.username=polytech
+      - spring.datasource.password=polytech
+    networks:
+      - myNetwork
+    depends_on:
+      database:
+        condition: service_healthy
+        restart: true
+    healthcheck:
+      test: curl http://localhost:8448/actuator/health
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  frontend:
+    image: frontend
+    build: 
+      context: /examPolytech2024/angular
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - 8888:80
+    environment:
+      - BACKEND_URL=http://localhost:8448
+    depends_on:
+      backend:
+        condition: service_healthy
+        restart: true
+  
+volumes:
+  database:
+
+networks:
+  myNetwork:

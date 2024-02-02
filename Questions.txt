@@ -1,0 +1,11 @@
+16 ) 
+
+17) CI signifie Continuous Implementation 
+CD signifie Continuous Demployment
+
+Cette technique permet de tester en continue le code mis à jour afin de s'assurer qu'il n'y ait pas d'erreur entre la partie test et la partie prod.
+
+18) Cours très bien construit, la méthodologie employée est excelente et permet de suivre les étapes de cours l'une après l'autre.
+
+19) Rien à dire j'ai adoré le cours :)
+
